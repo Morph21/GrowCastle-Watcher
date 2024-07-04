@@ -1,0 +1,29 @@
+<configuration>
+
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            # Pattern of log message for console appender
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n</Pattern>
+        </layout>
+    </appender>
+
+    <appender name="rolling" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/GrowCastle-Watcher.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>GrowCastle-Watcher-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>1MB</maxFileSize>
+            <maxHistory>5</maxHistory>
+            <totalSizeCap>10MB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.baeldung.log4j" level="TRACE"/>
+
+    <root level="INFO">
+        <appender-ref ref="stdout"/>
+        <appender-ref ref="rolling"/>
+    </root>
+</configuration>
