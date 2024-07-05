@@ -73,5 +73,7 @@ release_files/
 
 *dependency-reduced-pom.xml
 
+*.png
+
 
 
