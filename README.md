@@ -4,23 +4,29 @@
 
 - How it works?
 
-        It takes screenshots of your grow castle application in intervals then checks for red pixels in victory/defeat rows in bottom right corner
+        It takes screenshots of your grow castle application in intervals
+        then checks for red pixels in victory/defeat rows in bottom right corner
 
 - Is it possible to run it on android?
 
-        No, it's not. This application was made with emulator players in mind, at the moment it will work only on windows.
-        I did test it with bluestacks only but it should work with every emulator. If it doesn't please submit an issue about that
+        No, it's not. This application was made with emulator players in mind,
+        at the moment it will work only on windows.
+        I did test it with bluestacks only but it should work with every emulator.
+        If it doesn't please submit an issue about that
 
 - How will I get a notification about failed wave?
 
-        You can get notification either by pushbullet.com or ntfy.sh for both of them you will need to generate access token
+        You can get notification either by pushbullet.com or ntfy.sh for
+        both of them you will need to generate access token
         then set it up in application.properties file
 
 - How to run the application?
  
-        Download GrowCastle-Watcher.zip file from releases then unzip it in whatever location you want
+        Download GrowCastle-Watcher.zip file from releases
+        then unzip it in whatever location you want
         Set up everything in application.properties file (you can open it in notepad)
-        open command prompt as administrator, navigate into unzipped folder, type java -jar GrowCastle-Watcher.jar
+        open command prompt as administrator, navigate into unzipped folder, type
+        java -jar GrowCastle-Watcher.jar
         that's it
 
 
