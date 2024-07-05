@@ -101,7 +101,7 @@ public class MainService {
             var fourthPhoto = secondCut[11];
             var fithPhoto = secondCut[13];
 
-            String checksum = md5Hash(fithPhoto) + md5Hash(fourthPhoto) + md5Hash(thirdPhoto);
+            String checksum = md5Hash(firstCut[15]);
 
             result.setBlackRatio(FindRedService.instance().findBlackPixelsRatio(createScreenCapture));
 
