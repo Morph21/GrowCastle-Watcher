@@ -92,7 +92,7 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
-                            <finalName>pingoncolor</finalName>
+                            <finalName>GrowCastle-Watcher</finalName>
                         </configuration>
                     </execution>
                 </executions>
