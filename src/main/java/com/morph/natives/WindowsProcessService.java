@@ -48,17 +48,31 @@ public class WindowsProcessService {
             return null;
         }
 
-        List<Integer> parsedList = new ArrayList<>();
+        List<Integer> parsedList = null;
+        try {
 
-        for (int i = 1; i < result.size(); i++) {
-            String s = result.get(i);
-            List<String> split = Arrays.stream(s.split("\s")).filter(StringUtils::isNotBlank).toList();
-            parsedList.add(Integer.parseInt(split.get(2)));
+            parsedList = new ArrayList<>();
+
+            for (int i = 1; i < result.size(); i++) {
+                String s = result.get(i);
+
+                List<String> split = Arrays.stream(s.split("\s")).filter(StringUtils::isNotBlank).toList();
+                for (String str : split) {
+                    boolean isDigit = str.chars().mapToObj(x -> (char)x).allMatch(Character::isDigit);
+                    if (isDigit) {
+                        parsedList.add(Integer.parseInt(str));
+                    }
+                }
+            }
+            return parsedList;
+        } catch (Exception e){
+            result.forEach(logger::error);
+            logger.error(e.getMessage(), e);
+            return null;
         }
-        return parsedList;
     }
 
-    private List<String> executeCommand(String command) {
+    public List<String> executeCommand(String command) {
         try {
             Runtime rt = Runtime.getRuntime();
             String[] commands = {"cmd.exe", "/c", command};
